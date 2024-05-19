@@ -17,8 +17,11 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 // routers
-const router = require('./routes/productRoutes')
-app.use('/api/products',router)
+const routerProduct = require('./routes/productRoutes')
+const routerUser = require('./routes/userRoutes') 
+
+app.use('/api/products',routerProduct)
+app.use('/api/user',routerUser)
 
 
 // testing api

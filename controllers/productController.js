@@ -4,7 +4,6 @@ const db = require('../models')
 // main model
 
 const Product = db.products
-const Review = db.reviews
 
 
 // 1. create product 
@@ -57,7 +56,7 @@ const updateProduct = async (req,res)=>{
 
 const deleteProduct = async (req,res)=>{
     let id = req.params.id
-    await Product.destroy(req.body, {where: {id:id} })
+    await Product.destroy({where: {id:id} })
     res.status(200).send('product deleted')
 }
 
